@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -148,22 +149,82 @@ public class main {
 
 
 //        }
-        String answer = "";
-        String[] completion ={"stanko", "ana", "mislav"};
-        String[] participant ={"mislav", "stanko", "bye", "ana"};
-        Map<String ,Integer > map2 = new HashMap<>();
-        for(int i = 0; i<participant.length;i++){
-            map2.put(participant[i], map2.getOrDefault(participant[i], 0)+1);
-        }
-        for(int i = 0; i<completion.length;i++){
-            map2.put(completion[i], map2.get(completion[i])-1);
-        }
-        for(int i = 0; i<map2.size();i++){
-            if(map2.get(participant[i])==1){
-                answer = participant[i];
-            }else if(map2.get(participant[i])==-1){
-                answer = participant[i];
-            }
-        }
+//        String answer = "";
+//        String[] completion ={"stanko", "ana", "mislav"};
+//        String[] participant ={"mislav", "stanko", "bye", "ana"};
+//        Map<String ,Integer > map = new HashMap<>();
+//        for(int i = 0; i<participant.length;i++){
+//            map.put(participant[i], map.getOrDefault(participant[i], 0)+1);
+//        }
+//        for(int i = 0; i<completion.length;i++){
+//            map.put(completion[i], map.get(completion[i])-1);
+//        }
+//        for(int i = 0; i<map.size();i++){
+//            if(map.get(participant[i])==1){
+//                answer = participant[i];
+//            }else if(map.get(participant[i])==-1){
+//                answer = participant[i];
+//            }
+//        }
+//        String[][] clothes = {{"yellow_hat","headgear"},{"blue_sunglasses","eyewear"},{"green_turban","headgear"}};
+//        int answer = 1;
+//        Map<String, Integer>myClothes = new HashMap<>();
+//        String[] type = new String[clothes.length];
+//        for(int i = 0; i<clothes.length;i++) {
+//            type[i] = clothes[i][1];
+//
+//            if (myClothes.containsKey(type[i])) {
+//                myClothes.put(type[i], myClothes.get(type[i])+1);
+//            }else{
+//                myClothes.put(type[i], 1);
+//            }
+//
+//        }
+//        System.out.println(myClothes);
+//        for (String key : myClothes.keySet()) {
+//            answer *= myClothes.get(key) + 1;
+//        }
+//        answer = answer-1;
+//        System.out.println(answer);
+
+//        int[] nums = {3,3,3,2,2,4};
+//        int[] num1 = {3,3,3,2,2,2};
+//        int answer = 0;
+//        int fact = 1;
+//        int fact2 = 1;
+//        Set<Integer> mySet = new HashSet<>();
+//        for(Integer i : nums){
+//            mySet.add(i);
+//        }
+//        for(int i = (nums.length/2);i<=1;i--){
+//            fact *= i;
+//        }
+//
+//        for(int i = mySet.size();i< mySet.size()-nums.length/2;i--){
+//            fact2 *= i;
+//        }
+//
+//        System.out.println(nums.length);
+//        System.out.println(fact2);
+//        System.out.println(fact);
+//        answer = fact2/fact;
+//        System.out.println(answer);
+
+//        int[] nums = {3,3,7,6,2,2,2,4};
+//        int answer = 0;
+//        Set<Integer> mySet = new HashSet<>();
+//        for(Integer i : nums){
+//            mySet.add(i);
+//        }
+//        if(mySet.size()<nums.length/2){
+//            answer = mySet.size();
+//        }else{
+//            answer = nums.length/2;
+//        }
+//
+//        System.out.println(answer);
+
+
+
     }
 }
