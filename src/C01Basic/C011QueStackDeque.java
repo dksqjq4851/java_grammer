@@ -75,25 +75,57 @@ public class C011QueStackDeque {
 
 //        우선순위큐 : 데이터를 꺼낼때 정렬된 데이터 pop
 //        전체 정렬이 아닌 걍 꺼낼때마다 최소값 찾아서 꺼내줌
-        Queue<Integer> pq = new PriorityQueue<>();
-        pq.add(30);
-        pq.add(20);
-        pq.add(10);
-        pq.add(40);
-        pq.add(50);
-        System.out.println(pq);
-        while(!pq.isEmpty()){
-            System.out.println(pq.poll());
-        }
+//        Queue<Integer> pq = new PriorityQueue<>();
+//        pq.add(30);
+//        pq.add(20);
+//        pq.add(10);
+//        pq.add(40);
+//        pq.add(50);
+//        System.out.println(pq);
+//        while(!pq.isEmpty()){
+//            System.out.println(pq.poll());
+//        }
+//
+////        백준 : 최소힙
+//
+////        최대힙인경우
+//        Queue<Integer> maxPq = new PriorityQueue<>(Comparator.reverseOrder());
+//        maxPq.add(30);
+//        maxPq.add(10);
+//        maxPq.add(20);
+//        System.out.println(maxPq.poll());
 
-//        백준 : 최소힙
+//        stack
+//        Stack<Integer> st = new Stack<>();
+//        st.push(10);
+//        st.push(20);
+//        st.push(30);
+//        System.out.println(st.pop());
+//        System.out.println(st.peek());
+//        System.out.println(st.size());
+//        System.out.println(st.isEmpty());
+//
+//        while (!st.isEmpty()){
+//            System.out.println(st.pop());
+//        }
 
-//        최대힙인경우
-        Queue<Integer> maxPq = new PriorityQueue<>(Comparator.reverseOrder());
-        maxPq.add(30);
-        maxPq.add(10);
-        maxPq.add(20);
-        System.out.println(maxPq.poll());
+//        Deque : addFirst, addLast, pollFirst, pollLast
+        Deque<Integer> d1 = new ArrayDeque<>();
+        d1.addLast(10);
+        d1.addLast(20);
+        System.out.println(d1);
+        d1.addFirst(30);
+        d1.addLast(40);
+        System.out.println(d1);
+        System.out.println(d1.peekFirst());
+        System.out.println(d1.peekLast());
+        System.out.println(d1.peek());
+        System.out.println(d1.pollLast());
+        System.out.println(d1.pollFirst());
+
+//        올바른 괄호
+
+
 
 
 

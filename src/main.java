@@ -224,7 +224,81 @@ public class main {
 //
 //        System.out.println(answer);
 
+//        int[] scoville = {1,2,3,9,10,12};
+//        int k = 7;
+//        int answer = 0;
+//        Queue<Integer> que = new PriorityQueue<>();
+//        for(Integer i : scoville){
+//            que.add(i);
+//        }
+//        int min = que.peek();
+//        while (min<k){
+//            if(que.size()>=2){
+//                que.add(que.poll()+(que.poll()*2));
+//                min = que.peek();
+//                answer++;
+//            }else{
+//                answer=-1;
+//            }
 
-
+//        }
+//        int[] arr = {1,1,3,3,0,1,1};
+//        Stack<Integer> stack = new Stack<>();
+//        for(int a : arr){
+//            if(stack.isEmpty()){
+//                stack.push(a);
+//            }else {
+//                if(stack.peek() != a){
+//                    stack.push(a);
+//                }
+//            }
+//        }
+//        int[] answer = new int[stack.size()];
+//        for(int i = answer.length-1;i>=0;i--){
+//            answer[i] = stack.pop();
+//        }
+//        int count = 0;
+//        int[] answer = new int[arr.length];
+//        for (int i = 0; i<arr.length-1;i++){
+//            if(arr[i]!=arr[i+1]){
+//                answer[count] = arr[i];
+//                count++;
+//            }
+//        }
+//        answer[count] = arr[arr.length-1];
+//        System.out.println(Arrays.toString(answer));
+        boolean answer = false;
+        String s = "()()";Deque<Character> queue = new ArrayDeque<>();
+        for(int i = 0; i<s.length();i++){
+            if(queue.isEmpty()){
+                queue.addLast(s.charAt(i));
+            }else{
+                if(queue.peekLast()=='(' && s.charAt(i) ==')'){
+                    queue.pollLast();
+                }else {
+                    queue.addLast(s.charAt(i));
+                }
+            }
+        }
+        if (queue.isEmpty()){
+            answer = true;
+        }
+//        Deque<Character> queue = new ArrayDeque<>();
+        for(int i = 0; i<s.length();i++){
+            if(queue.isEmpty()){
+                queue.addLast(s.charAt(i));
+            }else{
+                if(queue.peekLast()=='(' && s.charAt(i) ==')'){
+                    queue.pollLast();
+                }else {
+                    queue.addLast(s.charAt(i));
+                }
+            }
+        }
+        if (queue.isEmpty()){
+            answer = true;
+        }
+        System.out.println(answer);
     }
+
 }
