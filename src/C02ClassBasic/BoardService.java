@@ -30,20 +30,19 @@ public class BoardService {
                 System.out.println("이메일을 입력해주세요");
                 Scanner sc2 = new Scanner(System.in);
                 String email = sc2.nextLine();
-                boolean check = false;
-                for(Author a : authors){
-                    if(a.getEmail().equals(email)){
-                        check = true;
-                        System.out.println("이미 존재하는 이메일 입니다.");
-                    }
-                }
-                if(!check){
+
+                if(authors.size()==0){
                     System.out.println("비밀번호를 입력해주세요");
                     Scanner sc3 = new Scanner(System.in);
                     String password = sc3.nextLine();
                     authors.add(new Author(name, email, password));
                     System.out.println("회원가입이 완료되었습니다.");
-
+                }else {
+                    for (Author a : authors){
+                        if (a.getEmail().equals(email)){
+                            System.out.println("이미 존재하는 이메일 입니다.");
+                        }
+                    }
                 }
             }else if(input==2){
                 System.out.println("회원전체목록조회 서비스입니다.");
@@ -89,17 +88,27 @@ public class BoardService {
 
             }else if(input==5){
                 System.out.println("게시글 목록 조회 서비스입니다.");
-                for(Post p : posts){
-                    System.out.println(p.getPost_id()+"  "+p.getTitle());
+                if(posts.size()==0) {
+                    System.out.println("아직 작성된 게시글이 없습니다.");
                 }
+                    else{
+                        for (Post p : posts) {
+                            System.out.println(p.getPost_id() + "  " + p.getTitle());
+                        }
+                    }
+
             }else if(input==6){
                 System.out.println("게시글 상세 조회 서비스입니다.");
-                for(Post p : posts){
-                    System.out.println(p.getPost_id()+"  "+p.getTitle()+"  "+p.getContents());
-                    int id = p.getUser_id();
-                    for(Author a : authors){
-                        if(a.getUser_id()==id){
-                            System.out.println(a.getEmail());
+                if(posts.size()==0){
+                    System.out.println("아직 작성된 게시글이 없습니다.");
+                }else {
+                    for (Post p : posts) {
+                        System.out.println(p.getPost_id() + "  " + p.getTitle() + "  " + p.getContents());
+                        int id = p.getUser_id();
+                        for (Author a : authors) {
+                            if (a.getUser_id() == id) {
+                                System.out.println(a.getEmail());
+                            }
                         }
                     }
                 }
@@ -113,18 +122,17 @@ public class BoardService {
 
             }
         }
-
     }
 }
 
 class Author{
-    static private int id = 0;
+    private static int id = 0;
     private  String name;
     private String email;
     private String password;
     private int user_id;
     private int count;
-    public Author(String name, String email, String password){
+    public Author(String name, String email, String password) {
         id++;
         this.name = name;
         this.email = email;
@@ -132,9 +140,7 @@ class Author{
         this.user_id = id;
         this.count = 0;
     }
-    public Author(){
 
-    }
 
 //    public int idEmail(String email){
 //        Author.
@@ -179,7 +185,6 @@ class Post{
 
     public Post(String title, String contents, int user_id){
         id++;
-        Author ac = new Author();
         this.title = title;
         this.contents = contents;
         this.user_id = user_id;
